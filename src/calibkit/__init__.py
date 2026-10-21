@@ -12,12 +12,17 @@ from .metrics import (
     reliability_bins,
 )
 from .plotting import plot_reliability_diagram
+from .recalibration import IsotonicRegression, PlattScaling, Recalibrator, TemperatureScaling
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "BootstrapResult",
+    "IsotonicRegression",
+    "PlattScaling",
+    "Recalibrator",
     "ReliabilityBins",
+    "TemperatureScaling",
     "adaptive_calibration_error",
     "bootstrap_ci",
     "brier_score",

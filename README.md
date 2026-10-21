@@ -17,8 +17,9 @@ v0.1: ECE (L1/L2, uniform/quantile bins), Brier score, bootstrap CIs (percentile
 v0.2: log-loss, MCE, ACE, bias-corrected L2 calibration error, reliability-diagram data and plot
 (`pip install calibkit[plot]`).
 
-Planned: recalibration methods
-(temperature, isotonic, Platt), shift detection, model-provider adapters, BCa intervals.
+v0.3: recalibration (`TemperatureScaling`, `PlattScaling`, `IsotonicRegression`), NumPy only.
+
+Planned: shift detection, model-provider adapters, BCa intervals.
 
 ## Correct use
 

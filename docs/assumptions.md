@@ -32,6 +32,14 @@ If your data violates them, the numbers still compute, but they do not mean what
   Treats bin assignment as fixed, skips bins with fewer than 2 points, and floors at 0, so it is
   *less* biased than plug-in L2, not unbiased. Its bias reduction is checked by simulation in the tests.
 
+## Recalibration (v0.3)
+
+- Fit on data **disjoint** from the data you evaluate on. Reusing the fit data makes calibration look better than it is.
+- Assumes the miscalibration is stable between fit and use. It does not survive distribution shift.
+- **Temperature:** one parameter, preserves ranking. Cannot fix a shifted base rate.
+- **Platt:** slope and intercept in logit space. Assumes a sigmoid-shaped distortion; a small L2 penalty keeps it finite on separable data.
+- **Isotonic:** monotone, nonparametric. Needs hundreds of points; overfits small samples and creates ties.
+
 ## Bootstrap confidence intervals
 
 - **Case resampling** of `(p, y)` pairs with replacement; assumes observations are i.i.d. or exchangeable.

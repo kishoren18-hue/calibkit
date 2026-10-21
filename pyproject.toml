@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "calibkit"
-version = "0.2.0"
+version = "0.3.0"
 description = "Calibration metrics with uncertainty quantification for probabilistic classifiers and LLM confidence."
 readme = "README.md"
 requires-python = ">=3.9"
