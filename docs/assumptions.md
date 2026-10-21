@@ -23,6 +23,15 @@ If your data violates them, the numbers still compute, but they do not mean what
 - Equal-width bins are unstable where predictions concentrate (common for LLM confidence);
   prefer `strategy="quantile"` or compare both.
 
+## Other metrics (v0.2)
+
+- **Log-loss:** probabilities are clipped to `[eps, 1-eps]`; the value depends on `eps` for confident errors.
+- **MCE:** maximum bin gap. A maximum over noisy gaps, so more upward-biased than ECE. Sparse bins dominate it.
+- **ACE:** unweighted mean gap over equal-mass bins (binary-outcome version of Nixon et al., 2019).
+- **`debiased_ece_l2`:** subtracts the within-bin sampling-noise term from the squared gap (after Kumar et al., 2019).
+  Treats bin assignment as fixed, skips bins with fewer than 2 points, and floors at 0, so it is
+  *less* biased than plug-in L2, not unbiased. Its bias reduction is checked by simulation in the tests.
+
 ## Bootstrap confidence intervals
 
 - **Case resampling** of `(p, y)` pairs with replacement; assumes observations are i.i.d. or exchangeable.

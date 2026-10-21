@@ -12,10 +12,12 @@ brier = ck.brier_score_ci(confidences, correct, confidence_level=0.95, seed=0)
 
 ## Status
 
-Milestone 1 (v0.1): ECE (L1/L2, uniform/quantile bins), Brier score, bootstrap CIs
-(percentile/basic), tests, CI.
+v0.1: ECE (L1/L2, uniform/quantile bins), Brier score, bootstrap CIs (percentile/basic), tests, CI.
 
-Planned: reliability diagrams, more metrics (debiased ECE, ACE, log-loss), recalibration methods
+v0.2: log-loss, MCE, ACE, bias-corrected L2 calibration error, reliability-diagram data and plot
+(`pip install calibkit[plot]`).
+
+Planned: recalibration methods
 (temperature, isotonic, Platt), shift detection, model-provider adapters, BCa intervals.
 
 ## Correct use
